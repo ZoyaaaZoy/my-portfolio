@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import me from "public/me.png";
 import aboutMe from "public/about-me.gif";
+import work1 from "public/1.webp";
 import styles from "@/styles/Home.module.css";
 import { FiSend } from 'react-icons/fi';
 import { GrAppsRounded } from 'react-icons/gr';
@@ -12,12 +13,13 @@ import { DiCss3 } from 'react-icons/di';
 import { FaReact, FaBootstrap } from 'react-icons/fa';
 import { SiTailwindcss, SiJavascript } from 'react-icons/si';
 import { AiOutlineInstagram, AiOutlineGithub, AiFillFacebook, AiOutlineHome, AiOutlineUser, AiOutlineLaptop, AiOutlineSend, AiOutlineHtml5, AiOutlineFileDone } from "react-icons/ai";
-import { useState } from "react";
+import { use, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [navApps, setNavApps] = useState(false);
+    const [scroll, setScroll] = useState(false);
     return (
         <>
             <Head>
@@ -30,33 +32,35 @@ export default function Home() {
                 <div className="bg-white pt-4 px-4">
                     <section className="text-slate-800">
                         <div className="text-slate-800 flex items-center justify-between ">
-                            <h1 className="font-superMario text-2xl"><a href="#">RrrrrrrDev.</a></h1>
+                            <h1 className="font-superMario text-2xl "><a href="#">RrrrrrrDev.</a></h1>
                             <GrAppsRounded className="text-3xl cursor-pointer" onClick={() => setNavApps(!navApps)} />
                         </div>
-                        <nav className={!navApps ? "opacity-0 transition-all ease-in duration-300" : " bg-slate-200 px-3 py-3 rounded-md opacity-100 transition-all ease-in duration-300 my-4"}>
+                        <hr className="bg-slate-800 h-[2px] mt-2 opacity-50 shadow-md" />
+                        <nav className={!navApps ? "opacity-0 transition-all ease-in duration-300 " : " bg-slate-200 px-3 py-3 rounded-md opacity-100 transition-all ease-in duration-300 my-4 cursor-pointer"}>
                             <ul className="flex justify-between items-center">
                                 <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200">
-                                    <AiOutlineHome className="text-2xl  cursor-pointer" />
+                                    <AiOutlineHome className="text-2xl" />
                                     <a href="#">Home</a>
                                 </li>
                                 <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200">
-                                    <AiOutlineUser className="text-2xl cursor-pointer" />
+                                    <AiOutlineUser className="text-2xl" />
                                     <a href="#">About</a>
                                 </li>
                                 <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200">
-                                    <AiOutlineLaptop className="text-2xl  cursor-pointer" />
+                                    <AiOutlineLaptop className="text-2xl" />
                                     <a href="#">Works</a>
                                 </li>
                                 <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200">
-                                    <AiOutlineSend className="text-2xl  cursor-pointer" />
+                                    <AiOutlineSend className="text-2xl" />
                                     <a href="#">Contact</a>
                                 </li>
                             </ul>
+
                         </nav>
                     </section>
 
                     <section className="flex items-center mb-5">
-                        <div className="flex flex-col items-center gap-3">
+                        <div className="flex flex-col items-center gap-3 ml-[30px]">
                             <a href="#">
                                 <AiOutlineInstagram className="text-black text-3xl" />
                             </a>
@@ -69,11 +73,11 @@ export default function Home() {
                                 <AiFillFacebook className="text-black text-3xl" />
                             </a>
                         </div>
-                        <div className="overflow-hidden relative bg-gradient-to-b from-slate-400 rounded-full w-60 h-60 mx-auto md:h-96 md:w-96">
-                            <Image src={me} objectFit="cover" className="grayscale" />
+                        <div className="relative mr-auto overflow-hidden bg-gradient-to-r from-emerald-500 to-sky-400 rounded-r-full w-60 h-60 mx-auto md:h-96 md:w-96">
+                            <Image src={me} objectFit="cover" />
                         </div>
                     </section>
-                    <div className="text-slate-700 pb-8">
+                    <div className="text-slate-700 pb-8 mt-3">
                         <h1 className="text-4xl font-bold font-nulshock">Rifky Andriansyah</h1>
                         <h3 className="flex items-center font-semibold text-lg">
                             <span className="w-24 bg-slate-800 h-1 border mr-5 ml-1"></span> FrontEnd
@@ -117,17 +121,17 @@ export default function Home() {
                     <div className="py-2 flex gap-3 justify-evenly">
                         <div className="flex flex-col gap-2 justify-start py-2">
                             <h1 className="text-slate-700">Programming language</h1>
-                            <div className="bg-slate-800 p-4 flex flex-col items-center rounded-lg">
+                            <div className="bg-slate-800 p-4 flex flex-col items-center gap-1 rounded-lg">
                                 <h1 className="font-semibold">HTML</h1>
                                 <AiOutlineHtml5 className="text-2xl" />
                                 <p className="text-sm">Medium</p>
                             </div>
-                            <div className="bg-slate-800 p-4 flex flex-col items-center rounded-lg">
+                            <div className="bg-slate-800 p-4 flex flex-col items-center gap-1 rounded-lg">
                                 <h1 className="font-semibold">CSS</h1>
                                 <DiCss3 className="text-2xl" />
                                 <p className="text-sm">Medium</p>
                             </div>
-                            <div className="bg-slate-800 p-4 flex flex-col items-center rounded-lg">
+                            <div className="bg-slate-800 p-4 flex flex-col items-center gap-1 rounded-lg">
                                 <h1 className="font-semibold">JAVASCRIPT</h1>
                                 <SiJavascript className="text-2xl" />
                                 <p className="text-sm">Medium</p>
@@ -135,17 +139,17 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col gap-2 justify-start py-2">
                             <h1 className="text-slate-700">Library & Framework</h1>
-                            <div className="bg-slate-800 p-4 flex flex-col items-center rounded-lg">
+                            <div className="bg-slate-800 p-4 flex flex-col items-center gap-1 rounded-lg">
                                 <h1 className="font-semibold">REACT</h1>
                                 <FaReact className="text-2xl" />
                                 <p className="text-sm">Medium</p>
                             </div>
-                            <div className="bg-slate-800 p-4 flex flex-col items-center rounded-lg">
+                            <div className="bg-slate-800 p-4 flex flex-col items-center gap-1 rounded-lg">
                                 <h1 className="font-semibold">TAILWIND</h1>
                                 <SiTailwindcss className="text-2xl" />
                                 <p className="text-sm">Medium</p>
                             </div>
-                            <div className="bg-slate-800 p-4 flex flex-col items-center rounded-lg">
+                            <div className="bg-slate-800 p-4 flex flex-col items-center gap-1 rounded-lg">
                                 <h1 className="font-semibold">BOOTSTRAP</h1>
                                 <FaBootstrap className="text-2xl" />
                                 <p className="text-sm">Medium</p>
@@ -158,6 +162,9 @@ export default function Home() {
                     <div className="bg-white">
                         <h1 className="text-slate-700 text-3xl text-center font-semibold">My Works</h1>
                         <h4 className="text-center text-slate-700">My Creation</h4>
+                    </div>
+                    <div>
+                        {/* <Image src={work1} /> */}
                     </div>
                 </div>
             </main>
