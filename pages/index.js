@@ -50,69 +50,72 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/logo.png" />
             </Head>
-            <main>
+            <main className="bg-white lg:px-8">
                 <div className="bg-white pt-4 px-4 dark:bg-slate-900">
-                    <section className="text-slate-800">
-                        <div className="text-slate-800 flex items-center justify-between ">
-                            <h1 className="font-superMario text-2xl  "><a href="#">Rrrrrrr <span className=" -ml-1 bg-gradient-to-r from-emerald-400 to-sky-400 bg-clip-text text-transparent"> Dev.</span></a></h1>
-                            <GrAppsRounded className="text-3xl cursor-pointer" onClick={() => setNavApps(!navApps)} />
-                        </div>
-                        <hr className="bg-slate-800 h-[2px] mt-2 opacity-50 shadow-md" />
-                        <nav className={!navApps ? "opacity-0 transition-all ease-in duration-300 " : " bg-slate-200 px-2 py-2 rounded-md opacity-100 transition-all ease-in duration-300 my-4 cursor-pointer"}>
-                            <ul className="flex justify-between items-center">
-                                <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefSatu.current)}>
-                                    <AiOutlineHome className="text-2xl" />
-                                    <span>Home</span>
-                                </li>
-                                <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefDua.current)}>
-                                    <AiOutlineUser className="text-2xl" />
-                                    <span >About</span>
-                                </li>
-                                <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefTiga.current)}>
-                                    <AiOutlineLaptop className="text-2xl" />
-                                    <span >Works</span>
-                                </li>
-                                <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefEmpat.current)}>
-                                    <AiOutlineSend className="text-2xl" />
-                                    <span >Contact</span>
-                                </li>
-                                <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200 relative" onClick={() => setDarkMode(!darkMode)}>
-                                    <BsFillMoonStarsFill className="text-2xl" />
-                                    <span >Theme</span>
-                                </li>
-                            </ul>
-                        </nav>
-                    </section>
-
-                    <section className="flex items-center mb-5" ref={linkRefSatu}>
-                        <div className="flex flex-col items-center gap-3 ml-[30px]">
-                            <a href="https://www.instagram.com/rfkyyyyy/">
-                                <AiOutlineInstagram className="bg-gradient-to-tr from-yellow-400 to-purple-500 text-slate-100 text-3xl rounded-lg animate-bounce hover:animate-none hover:scale-110 transition-all duration-500" />
-                            </a>
-                            <span className="w-full bg-slate-800 h-[2px] border"></span>
-                            <a href="https://github.com/ZoyaaaZoy">
-                                <AiOutlineGithub className="text-black text-3xl animate-bounce hover:animate-none hover:scale-110 transition-all duration-500" />
-                            </a>
-                            <span className="w-full bg-slate-800 h-[2px] border"></span>
-                            <a href="https://web.facebook.com/rifkyandriansyah.anggela">
-                                <AiFillFacebook className="text-blue-600 text-3xl animate-bounce hover:animate-none hover:scale-110 transition-all duration-500" />
-                            </a>
-                        </div>
-                        <div className="relative mr-auto overflow-hidden bg-gradient-to-r from-emerald-500 to-sky-400 rounded-r-full w-60 h-60 mx-auto md:h-96 md:w-96">
-                            <Image src={me} objectFit="cover" />
+                    <section className="text-slate-800 lg:mb-5">
+                        <div className="text-slate-800 lg:flex lg:items-center lg:justify-between ">
+                            <div className="flex justify-between">
+                                <h1 className="font-superMario text-2xl  "><a href="#">Rrrrrrr <span className=" -ml-1 bg-gradient-to-r from-emerald-400 to-sky-400 bg-clip-text text-transparent"> Dev.</span></a></h1>
+                                <GrAppsRounded className="text-3xl cursor-pointer lg:hidden" onClick={() => setNavApps(!navApps)} />
+                            </div>
+                            <hr className="bg-slate-800 h-[2px] mt-2 opacity-50 shadow-md" />
+                            <nav className={!navApps ? "opacity-0 transition-all ease-in duration-300 lg:opacity-100 lg:flex lg:justify-end" : " bg-slate-200 px-2 py-2 rounded-md opacity-100 transition-all ease-in duration-300 my-4 cursor-pointer"}>
+                                <ul className="flex justify-between items-center lg:cursor-pointer">
+                                    <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefSatu.current)}>
+                                        <AiOutlineHome className="text-2xl lg:hidden" />
+                                        <span>Home</span>
+                                    </li>
+                                    <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefDua.current)}>
+                                        <AiOutlineUser className="text-2xl lg:hidden" />
+                                        <span >About</span>
+                                    </li>
+                                    <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefTiga.current)}>
+                                        <AiOutlineLaptop className="text-2xl lg:hidden" />
+                                        <span >Works</span>
+                                    </li>
+                                    <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200" onClick={() => goTo(linkRefEmpat.current)}>
+                                        <AiOutlineSend className="text-2xl lg:hidden" />
+                                        <span >Contact</span>
+                                    </li>
+                                    <li className="flex flex-col items-center px-2 py-2 rounded-md hover:bg-slate-400 transition-all ease-in-out duration-200 relative" onClick={() => setDarkMode(!darkMode)}>
+                                        <BsFillMoonStarsFill className="text-2xl" />
+                                        <span className="lg:hidden">Theme</span>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </section>
-                    <div className="text-slate-700 pb-8 mt-3">
-                        <h1 className="text-4xl font-bold font-nulshock">Rifky Andriansyah</h1>
-                        <h3 className="flex items-center font-semibold text-lg">
-                            <span className="w-24 bg-slate-800 h-1 border mr-5 ml-1"></span> FrontEnd
-                            Developer.
-                        </h3>
-                        <p className="text-slate-500 text-md font-[poppins] mb-3">
-                            I'am FrontEnd Developer based in <span className="text-black font-serif font-semibold">Bandung</span> and i'am very
-                            passionate and dedicated to my work.
-                        </p>
-                        <button className=" px-4 py-3 bg-slate-800 flex items-center text-white font-semibold rounded-[10px] font-[poppins]">Say Hello<FiSend className="ml-2 mt-[3px]" /></button>
+                    <div className="lg:flex flex-row gap-7 justify-between mb-9 lg:mt-20">
+                        <section className="flex items-center mb-5" ref={linkRefSatu}>
+                            <div className="flex flex-col items-center gap-3 ml-[30px]">
+                                <a href="https://www.instagram.com/rfkyyyyy/">
+                                    <AiOutlineInstagram className="bg-gradient-to-tr from-yellow-400 to-purple-500 text-slate-100 text-3xl rounded-lg animate-bounce hover:animate-none hover:scale-110 transition-all duration-500" />
+                                </a>
+                                <span className="w-full bg-slate-800 h-[2px] border"></span>
+                                <a href="https://github.com/ZoyaaaZoy">
+                                    <AiOutlineGithub className="text-black text-3xl animate-bounce hover:animate-none hover:scale-110 transition-all duration-500" />
+                                </a>
+                                <span className="w-full bg-slate-800 h-[2px] border"></span>
+                                <a href="https://web.facebook.com/rifkyandriansyah.anggela">
+                                    <AiFillFacebook className="text-blue-600 text-3xl animate-bounce hover:animate-none hover:scale-110 transition-all duration-500" />
+                                </a>
+                            </div>
+                            <div className=" lg:ml-5 relative mr-auto overflow-hidden bg-gradient-to-r from-emerald-500 to-sky-400 rounded-r-full w-60 h-60 mx-auto md:h-96 md:w-96">
+                                <Image src={me} objectFit="cover" />
+                            </div>
+                        </section>
+                        <div className="text-slate-700 pb-8 mt-3 lg:flex lg:flex-col lg:justify-center lg:items-center">
+                            <h1 className="text-4xl font-bold font-nulshock">Rifky Andriansyah</h1>
+                            <h3 className="flex items-center font-semibold text-lg">
+                                <span className="w-24 bg-slate-800 h-1 border mr-5 ml-1"></span> FrontEnd
+                                Developer.
+                            </h3>
+                            <p className="text-slate-500 text-md font-[poppins] mb-3">
+                                I'am FrontEnd Developer based in <span className="text-black font-serif font-semibold">Bandung</span> and i'am very
+                                passionate and dedicated to my work.
+                            </p>
+                            <button className=" px-4 py-3 bg-slate-800 flex items-center text-white font-semibold rounded-[10px] font-[poppins]">Say Hello<FiSend className="ml-2 mt-[3px]" /></button>
+                        </div>
                     </div>
                 </div>
                 <hr className="h-1 bg-slate-200" />
